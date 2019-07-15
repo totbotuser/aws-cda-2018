@@ -1,0 +1,24 @@
+#!/bin/bash
+/bin/echo 'xdXtKgPRuG' | /bin/passwd cloud_user --stdin
+yum -y update
+yum -y install python35
+yum -y install wget
+yum -y install python35-pip
+pip-3.5 install boto3 --upgrade
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/create_queue.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/data.json
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/fifo_consumer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/fifo_producer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/purge_queue.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/queue_status.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/fifo/sqs_url.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/meta/config/config
+mv create_queue.py /home/cloud_user/
+mv data.json /home/cloud_user/
+mv fifo_consumer.py /home/cloud_user/
+mv fifo_producer.py /home/cloud_user/
+mv purge_queue.py /home/cloud_user/
+mv queue_status.py /home/cloud_user/
+mv sqs_url.py /home/cloud_user/
+mkdir /home/cloud_user/.aws
+mv config /home/cloud_user/.aws/
