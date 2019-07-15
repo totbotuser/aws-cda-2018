@@ -1,0 +1,30 @@
+#!/bin/bash
+/bin/echo 'IVYePkTPkg' | /bin/passwd cloud_user --stdin
+yum -y update
+yum -y install python35
+yum -y install wget
+yum -y install python35-pip
+pip-3.5 install boto3 --upgrade
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/sqs_url.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/slow_producer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/slow_data.json
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/slow_consumer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/queue_status.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/purge_queue.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/fast_producer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/fast_data.json
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/fast_consumer.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/sqs/lab-files/standard/create_queue.py
+wget https://raw.githubusercontent.com/linuxacademy/aws-cda-2018/master/meta/config/config
+mv sqs_url.py /home/cloud_user
+mv slow_producer.py /home/cloud_user
+mv slow_data.json /home/cloud_user
+mv slow_consumer.py /home/cloud_user
+mv queue_status.py /home/cloud_user
+mv purge_queue.py /home/cloud_user
+mv fast_producer.py /home/cloud_user
+mv fast_data.json /home/cloud_user
+mv fast_consumer.py /home/cloud_user
+mv create_queue.py /home/cloud_user
+mkdir /home/cloud_user/.aws
+mv config /home/cloud_user/.aws/
